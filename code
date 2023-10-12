@@ -3,6 +3,42 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 
 app = QApplication([])
+start_window = QWidget()
+start_window.setWindowTitle('Стартовое окно')
+start_window.setFixedSize(600, 400)
+
+start_text = QLabel('приветствие')
+start_text.setFont(QFont('Arial',30))
+start_button = QPushButton('старт')
+start_button.setFont(QFont('Arial',50, QFont.Bold))
+start_button.setStyleSheet('''
+    QPushButton {
+      background-color: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+            stop:0 #00bfff, stop:1 #006699);
+        color: white;
+        border-radius: 5px;
+        padding: 10px;
+    }
+    QPushButton:hover {
+        background-color: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+            stop:0 #006699, stop:1 #00bfff);
+    }
+''')
+start_button.setCursor(QCursor(Qt.PointingHandCursor))
+start_image_label = QLabel()
+start_image = QPixmat('cat.jpg')
+start_image = start_image.scaled(300, 200)
+start_image_label.setPixmap(start_image)
+
+
+start_layout = QVBoxLayout()
+start_layout.addWidget(start_text, alignment=Qt.AlignCenter)
+start_layout.addWidget(start_image_label, alignment=Qt.AlignCenter)
+start_layout.addWidget(start_button, alignment=Qt.AlignCenter)
+
+start_window.setLayout(start_layout)
+start_window.show()
+
 window = QWidget()
 window.setWindowTitle('Тест на знание стран')
 window.setFont(QFont('Courier New', 12))
@@ -112,16 +148,33 @@ q2 = Question('Сколько стран в Азии?', '54', '24', '30', '50')
 q3 = Question('Столица Латвии?', 'Рига', 'Таллин', 'Вильнюс', 'Вена')
 q4 = Question('Сколько стран всего?', '195', '150', '100', '160')
 q5 = Question('Самая большая страна в мире?', 'Россия', 'Канада', 'США', 'Китай')
-q6 = Question('Самая бедная страна в мире?', 'солнца', 'луны', 'костра', 'марса')
-q7 = Question('Легкий ветер - это', 'шторм', 'бриз', 'цунами', 'буря')
-q8 = Question('Легкий ветер - это', 'шторм', 'бриз', 'цунами', 'буря')
-q9 = Question('Легкий ветер - это', 'шторм', 'бриз', 'цунами', 'буря')
-q10 = Question('Легкий ветер - это', 'шторм', 'бриз', 'цунами', 'буря')
+q6 = Question('Самая бедная страна в мире?', 'Бурунди', 'Эфипия', 'Гамбия', 'Мозамбик')
+q7 = Question('Западные страны Европы', 'шторм', 'бриз', 'цунами', 'буря')
+q8 = Question('Какая самая большая столица в Северной Америке', 'Мехико', 'бриз', 'цунами', 'фф')
+q9 = Question('Какой стране принадлежит Канарские острова?', 'Испания', 'бриз', 'цунами', 'буря')
+q10 = Question('Какие две страны граничат непосредственно к северу от Венгрии?', 'Словвкия и Украина', 'бриз', 'цунами', 'буря')
 q11 = Question('Легкий ветер - это', 'шторм', 'бриз', 'цунами', 'буря')
 q12 = Question('Легкий ветер - это', 'шторм', 'бриз', 'цунами', 'буря')
 q13 = Question('Легкий ветер - это', 'шторм', 'бриз', 'цунами', 'буря')
 q14 = Question('Легкий ветер - это', 'шторм', 'бриз', 'цунами', 'буря')
 q15 = Question('Легкий ветер - это', 'шторм', 'бриз', 'цунами', 'буря')
+q16 = Question('Легкий ветер - это', 'шторм', 'бриз', 'цунами', 'буря')
+q17 = Question('Легкий ветер - это', 'шторм', 'бриз', 'цунами', 'буря')
+q18 = Question('Легкий ветер - это', 'шторм', 'бриз', 'цунами', 'буря')
+q19 = Question('Легкий ветер - это', 'шторм', 'бриз', 'цунами', 'буря')
+q20 = Question('Легкий ветер - это', 'шторм', 'бриз', 'цунами', 'буря')
+q21 = Question('Легкий ветер - это', 'шторм', 'бриз', 'цунами', 'буря')
+q22 = Question('Легкий ветер - это', 'шторм', 'бриз', 'цунами', 'буря')
+q23 = Question('Легкий ветер - это', 'шторм', 'бриз', 'цунами', 'буря')
+q24 = Question('Легкий ветер - это', 'шторм', 'бриз', 'цунами', 'буря')
+q25 = Question('Легкий ветер - это', 'шторм', 'бриз', 'цунами', 'буря')
+q26 = Question('Легкий ветер - это', 'шторм', 'бриз', 'цунами', 'буря')
+q27 = Question('Легкий ветер - это', 'шторм', 'бриз', 'цунами', 'буря')
+q28 = Question('Легкий ветер - это', 'шторм', 'бриз', 'цунами', 'буря')
+q29 = Question('Легкий ветер - это', 'шторм', 'бриз', 'цунами', 'буря')
+q30 = Question('Легкий ветер - это', 'шторм', 'бриз', 'цунами', 'буря')
+q31 = Question('Легкий ветер - это', 'шторм', 'бриз', 'цунами', 'буря')
+
 
 
 question_list = [q1, q2, q3, q4, q5, q6, q7]
@@ -131,5 +184,10 @@ window.total = 0
 window.score = 0
 
 next_question()
-window.show()
+
+def StartApp():
+    window.show()
+    start_window.close()
+start_button.clicked.connect(StartApp)
+
 app.exec_()
